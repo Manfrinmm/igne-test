@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/icon.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://fluig.totvs.com/style-guide/css/fluig-style-guide.min.css"
+    />
+
+    <link rel="stylesheet" href="./styles/main.css" />
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Igne | Cadastro de cliente e produto</title>
+  </head>
+
+  <body class="fluig-style-guide container-fluid">
+    <header class="container-fluid fs-display-flex">
+      <h1 class="fs-color-white text-center">Cadastro Cliente / Produto</h1>
+
+      <button>Enviar</button>
+    </header>
+
+    <main class="container-fluid">
+      <fieldset class="session">
+        <legend class="fs-color-white">A Solicitante</legend>
+
+        <!-- <form class="form-inline" role="form" autocomplete="off"> -->
+
+        <div class="row">
+          <div class="form-group col-md-3">
+            <label class="fs-no-bold" for="solicitation_date"
+              >Data Solicitação</label
+            >
+            <input
+              class="form-control"
+              type="datetime-local"
+              name="solicitation_date"
+              id="solicitation_date"
+            />
+          </div>
+
+          <div class="form-group col-md-6">
+            <label class="fs-no-bold" for="name">Nome</label>
+            <input class="form-control" name="name" id="name" />
+          </div>
+
+          <div class="form-group col-md-3">
+            <label class="fs-no-bold" for="area">Área</label>
+            <input class="form-control" name="area" id="area" />
+          </div>
+        </div>
+        <!-- </form> -->
+      </fieldset>
+
+      <fieldset class="session">
+        <legend class="fs-color-white">Solicitação</legend>
+
+        <fieldset class="session fs-md-margin">
+          <legend class="fs-color-white">Dados do Fornecedor</legend>
+
+          <form class="row" role="form" autocomplete="off">
+            <div class="form-group col-md-8">
+              <label class="fs-no-bold" for="razao_social">Razão Social</label>
+              <input
+                id="razao_social"
+                class="form-control"
+                name="razao_social"
+              />
+            </div>
+
+            <div class="form-group col-md-4">
+              <label class="fs-no-bold" for="cnpj">CNPJ</label>
+              <input id="cnpj" class="form-control" name="cnpj" />
+            </div>
+
+            <div class="form-group col-md-8">
+              <label class="fs-no-bold" for="fantasy_name">Nome Fantasia</label>
+              <input
+                id="fantasy_name"
+                class="form-control"
+                name="fantasy_name"
+              />
+            </div>
+
+            <div class="form-group col-md-4">
+              <label class="fs-no-bold" for="inscricao_estadual"
+                >Inscrição Estadual</label
+              >
+              <input
+                id="inscricao_estadual"
+                class="form-control"
+                name="inscricao_estadual"
+              />
+            </div>
+
+            <div class="form-group col-md-4">
+              <label class="fs-no-bold" for="address.zip_code">CEP</label>
+              <input
+                id="address.zip_code"
+                class="form-control"
+                name="address.zip_code"
+              />
+            </div>
+
+            <div class="form-group col-md-4 col-md-offset-4">
+              <label class="fs-no-bold" for="inscricao_municipal"
+                >Inscrição Municipal</label
+              >
+              <input
+                id="inscricao_municipal"
+                class="form-control"
+                name="inscricao_municipal"
+              />
+            </div>
+
+            <div class="form-group col-md-4">
+              <label class="fs-no-bold" for="address.street">Endereço</label>
+              <input
+                id="address.street"
+                class="form-control"
+                name="address.street"
+              />
+            </div>
+
+            <div class="form-group col-md-4">
+              <label class="fs-no-bold" for="address.complement"
+                >Complemento</label
+              >
+              <input
+                id="address.complement"
+                class="form-control"
+                name="address.complement"
+              />
+            </div>
+
+            <div class="form-group col-md-4">
+              <label class="fs-no-bold" for="address.number">Número</label>
+              <input
+                id="address.number"
+                class="form-control"
+                name="address.number"
+              />
+            </div>
+
+            <div class="form-group col-md-4">
+              <label class="fs-no-bold" for="address.neighborhood"
+                >Bairro</label
+              >
+              <input
+                id="address.neighborhood"
+                class="form-control"
+                name="address.neighborhood"
+              />
+            </div>
+
+            <div class="form-group col-md-4">
+              <label class="fs-no-bold" for="address.state">Estado</label>
+              <input
+                id="address.state"
+                class="form-control"
+                name="address.state"
+              />
+            </div>
+
+            <div class="form-group col-md-4">
+              <label class="fs-no-bold" for="address.city">Município</label>
+              <input
+                id="address.city"
+                class="form-control"
+                name="address.city"
+              />
+            </div>
+
+            <div class="form-group col-md-4">
+              <label class="fs-no-bold" for="contact.name"
+                >Nome da pessoa de Contato</label
+              >
+              <input
+                id="contact.name"
+                class="form-control"
+                name="contact.name"
+              />
+            </div>
+
+            <div class="form-group col-md-4">
+              <label class="fs-no-bold" for="contact.phone">Telefone</label>
+              <input
+                id="contact.phone"
+                class="form-control"
+                name="contact.phone"
+              />
+            </div>
+
+            <div class="form-group col-md-4">
+              <label class="fs-no-bold" for="contact.email">E-mail</label>
+              <input
+                id="contact.email"
+                class="form-control"
+                name="contact.email"
+              />
+            </div>
+          </form>
+        </fieldset>
+
+        <fieldset class="session fs-md-margin">
+          <legend class="fs-color-white">Produtos</legend>
+
+          <ul class="products fs-display-flex">
+            <button>Incluir Item</button>
+            <li class="product fs-display-flex">
+              <button>Delete</button>
+              <fieldset>
+                <legend class="fs-color-white">Item 1</legend>
+                <form class="fs-display-flex flex-direction-column">
+                  <div class="form-group">
+                    <label class="fs-no-bold" for="product_description"
+                      >Descrição do Produto</label
+                    >
+                    <input
+                      class="form-control"
+                      name="product_description"
+                      id="product_description"
+                    />
+                  </div>
+
+                  <div class="group">
+                    <div class="form-group">
+                      <label class="fs-no-bold" for="product_description"
+                        >Und. Medida</label
+                      >
+                      <input
+                        class="form-control"
+                        name="product_description"
+                        id="product_description"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label class="fs-no-bold" for="product_description"
+                        >Qtde em Estoque</label
+                      >
+                      <input
+                        class="form-control"
+                        type="number"
+                        name="product_description"
+                        id="product_description"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label class="fs-no-bold" for="product_description"
+                        >Valor Unitário</label
+                      >
+                      <input
+                        class="form-control"
+                        type="number"
+                        name="product_description"
+                        id="product_description"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label class="fs-no-bold" for="product_description"
+                        >Valor Total</label
+                      >
+                      <input
+                        class="form-control"
+                        type="number"
+                        disabled
+                        name="product_description"
+                        id="product_description"
+                      />
+                    </div>
+                  </div>
+                </form>
+              </fieldset>
+            </li>
+
+            <li class="product fs-display-flex">
+              <button>Delete</button>
+              <fieldset>
+                <legend class="fs-color-white">Item 2</legend>
+                <form class="fs-display-flex flex-direction-column">
+                  <div class="form-group">
+                    <label class="fs-no-bold" for="product_description"
+                      >Descrição do Produto</label
+                    >
+                    <input
+                      class="form-control"
+                      name="product_description"
+                      id="product_description"
+                    />
+                  </div>
+
+                  <div class="group">
+                    <div class="form-group">
+                      <label class="fs-no-bold" for="product_description"
+                        >Und. Medida</label
+                      >
+                      <input
+                        class="form-control"
+                        name="product_description"
+                        id="product_description"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label class="fs-no-bold" for="product_description"
+                        >Qtde em Estoque</label
+                      >
+                      <input
+                        class="form-control"
+                        type="number"
+                        name="product_description"
+                        id="product_description"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label class="fs-no-bold" for="product_description"
+                        >Valor Unitário</label
+                      >
+                      <input
+                        class="form-control"
+                        type="number"
+                        name="product_description"
+                        id="product_description"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label class="fs-no-bold" for="product_description"
+                        >Valor Total</label
+                      >
+                      <input
+                        class="form-control"
+                        type="number"
+                        disabled
+                        name="product_description"
+                        id="product_description"
+                      />
+                    </div>
+                  </div>
+                </form>
+              </fieldset>
+            </li>
+          </ul>
+        </fieldset>
+      </fieldset>
+    </main>
+  </body>
+</html>

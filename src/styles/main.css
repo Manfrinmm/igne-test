@@ -1,0 +1,52 @@
+body {
+  background: #282a36;
+
+  max-width: 1120px;
+
+  margin: auto !important;
+}
+
+fieldset.session {
+  /* border: 1px solid #fff; */
+
+  /* margin: auto 32px; */
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.form-group label {
+  color: #fff;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+}
+
+.products li + li {
+  margin-top: 32px;
+}
+
+.products > button {
+  margin-left: auto;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+}
+
+.product fieldset {
+  margin-left: 16px;
+}
+
+.product form .group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product form .group div + div {
+  margin-left: 16px;
+}
