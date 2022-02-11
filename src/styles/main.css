@@ -10,6 +10,8 @@ fieldset.session {
   /* border: 1px solid #fff; */
 
   /* margin: auto 32px; */
+  display: flex;
+  flex-direction: column;
 }
 
 .flex-direction-column {
@@ -29,8 +31,8 @@ fieldset.session {
   margin-top: 32px;
 }
 
-.products > button {
-  margin-left: auto;
+.add-item-button {
+  margin-left: auto !important;
 }
 
 .product {
@@ -42,11 +44,24 @@ fieldset.session {
   margin-left: 16px;
 }
 
-.product form .group {
+.product section .group {
   display: flex;
   justify-content: space-between;
 }
 
-.product form .group div + div {
+.product section .group div + div {
   margin-left: 16px;
+}
+
+.session-attachment {
+  display: flex;
+  flex-direction: row !important;
+}
+
+.session-attachment button {
+  margin-bottom: auto;
+}
+
+#inputFile {
+  display: none;
 }

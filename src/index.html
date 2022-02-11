@@ -24,14 +24,12 @@
     <header class="container-fluid fs-display-flex">
       <h1 class="fs-color-white text-center">Cadastro Cliente / Produto</h1>
 
-      <button>Enviar</button>
+      <button type="submit" id="submitButton" form="forms">Enviar</button>
     </header>
 
     <main class="container-fluid">
       <fieldset class="session">
         <legend class="fs-color-white">A Solicitante</legend>
-
-        <!-- <form class="form-inline" role="form" autocomplete="off"> -->
 
         <div class="row">
           <div class="form-group col-md-3">
@@ -56,7 +54,6 @@
             <input class="form-control" name="area" id="area" />
           </div>
         </div>
-        <!-- </form> -->
       </fieldset>
 
       <fieldset class="session">
@@ -65,19 +62,20 @@
         <fieldset class="session fs-md-margin">
           <legend class="fs-color-white">Dados do Fornecedor</legend>
 
-          <form class="row" role="form" autocomplete="off">
+          <form class="row" id="forms" role="form" autocomplete="off">
             <div class="form-group col-md-8">
               <label class="fs-no-bold" for="razao_social">Razão Social</label>
               <input
                 id="razao_social"
                 class="form-control"
                 name="razao_social"
+                required
               />
             </div>
 
             <div class="form-group col-md-4">
               <label class="fs-no-bold" for="cnpj">CNPJ</label>
-              <input id="cnpj" class="form-control" name="cnpj" />
+              <input id="cnpj" class="form-control" name="cnpj" required />
             </div>
 
             <div class="form-group col-md-8">
@@ -86,6 +84,7 @@
                 id="fantasy_name"
                 class="form-control"
                 name="fantasy_name"
+                required
               />
             </div>
 
@@ -101,11 +100,12 @@
             </div>
 
             <div class="form-group col-md-4">
-              <label class="fs-no-bold" for="address.zip_code">CEP</label>
+              <label class="fs-no-bold" for="address-zip_code">CEP</label>
               <input
-                id="address.zip_code"
+                id="address-zip_code"
                 class="form-control"
-                name="address.zip_code"
+                name="address-zip_code"
+                required
               />
             </div>
 
@@ -121,89 +121,100 @@
             </div>
 
             <div class="form-group col-md-4">
-              <label class="fs-no-bold" for="address.street">Endereço</label>
+              <label class="fs-no-bold" for="address-street">Endereço</label>
               <input
-                id="address.street"
+                id="address-street"
                 class="form-control"
-                name="address.street"
+                name="address-street"
+                required
               />
             </div>
 
             <div class="form-group col-md-4">
-              <label class="fs-no-bold" for="address.complement"
+              <label class="fs-no-bold" for="address-complement"
                 >Complemento</label
               >
               <input
-                id="address.complement"
+                id="address-complement"
                 class="form-control"
-                name="address.complement"
+                name="address-complement"
+                required
               />
             </div>
 
             <div class="form-group col-md-4">
-              <label class="fs-no-bold" for="address.number">Número</label>
+              <label class="fs-no-bold" for="address-number">Número</label>
               <input
-                id="address.number"
+                id="address-number"
                 class="form-control"
-                name="address.number"
+                name="address-number"
+                required
               />
             </div>
 
             <div class="form-group col-md-4">
-              <label class="fs-no-bold" for="address.neighborhood"
+              <label class="fs-no-bold" for="address-neighborhood"
                 >Bairro</label
               >
               <input
-                id="address.neighborhood"
+                id="address-neighborhood"
                 class="form-control"
-                name="address.neighborhood"
+                name="address-neighborhood"
+                required
               />
             </div>
 
             <div class="form-group col-md-4">
-              <label class="fs-no-bold" for="address.state">Estado</label>
+              <label class="fs-no-bold" for="address-state">Estado</label>
               <input
-                id="address.state"
+                id="address-state"
                 class="form-control"
-                name="address.state"
+                name="address-state"
+                required
               />
             </div>
 
             <div class="form-group col-md-4">
-              <label class="fs-no-bold" for="address.city">Município</label>
+              <label class="fs-no-bold" for="address-city">Município</label>
               <input
-                id="address.city"
+                id="address-city"
                 class="form-control"
-                name="address.city"
+                name="address-city"
+                required
               />
             </div>
 
             <div class="form-group col-md-4">
-              <label class="fs-no-bold" for="contact.name"
+              <label class="fs-no-bold" for="contact-name"
                 >Nome da pessoa de Contato</label
               >
               <input
-                id="contact.name"
+                id="contact-name"
                 class="form-control"
-                name="contact.name"
+                name="contact-name"
+                autocomplete="false"
+                required
               />
             </div>
 
             <div class="form-group col-md-4">
-              <label class="fs-no-bold" for="contact.phone">Telefone</label>
+              <label class="fs-no-bold" for="contact-phone">Telefone</label>
               <input
-                id="contact.phone"
+                id="contact-phone"
                 class="form-control"
-                name="contact.phone"
+                name="contact-phone"
+                required
               />
             </div>
 
             <div class="form-group col-md-4">
-              <label class="fs-no-bold" for="contact.email">E-mail</label>
+              <label class="fs-no-bold" for="contact-email">E-mail</label>
               <input
-                id="contact.email"
+                id="contact-email"
+                type="email"
                 class="form-control"
-                name="contact.email"
+                name="contact-email"
+                required
               />
             </div>
           </form>
@@ -212,148 +223,128 @@
         <fieldset class="session fs-md-margin">
           <legend class="fs-color-white">Produtos</legend>
 
-          <ul class="products fs-display-flex">
-            <button>Incluir Item</button>
-            <li class="product fs-display-flex">
-              <button>Delete</button>
+          <button class="add-item-button" onclick="addItemToList()">
+            Incluir Item
+          </button>
+
+          <ul class="products fs-display-flex" id="products">
+            <li class="product fs-display-flex" id="item-1">
+              <button onclick="removeItem(1)">Delete</button>
               <fieldset>
                 <legend class="fs-color-white">Item 1</legend>
-                <form class="fs-display-flex flex-direction-column">
+                <section class="fs-display-flex flex-direction-column">
                   <div class="form-group">
-                    <label class="fs-no-bold" for="product_description"
+                    <label class="fs-no-bold" for="product-description"
                       >Descrição do Produto</label
                     >
                     <input
                       class="form-control"
-                      name="product_description"
-                      id="product_description"
+                      name="product-description"
+                      id="product-description"
+                      form="forms"
+                      required
                     />
                   </div>
 
                   <div class="group">
                     <div class="form-group">
-                      <label class="fs-no-bold" for="product_description"
+                      <label class="fs-no-bold" for="product-measurement"
                         >Und. Medida</label
                       >
                       <input
                         class="form-control"
-                        name="product_description"
-                        id="product_description"
+                        name="product-measurement"
+                        id="product-measurement"
+                        list="product-measurement-list"
+                        form="forms"
+                        required
                       />
+
+                      <datalist id="product-measurement-list">
+                        <option value="Quilograma"></option>
+                        <option value="Grama"></option>
+                        <option value="Litros"></option>
+                        <option value="Mililitros"></option>
+                        <option value="Quilômetros"></option>
+                        <option value="Metros"></option>
+                      </datalist>
                     </div>
 
                     <div class="form-group">
-                      <label class="fs-no-bold" for="product_description"
+                      <label class="fs-no-bold" for="product-quantity"
                         >Qtde em Estoque</label
                       >
                       <input
                         class="form-control"
                         type="number"
-                        name="product_description"
-                        id="product_description"
+                        name="product-quantity"
+                        id="product-quantity"
+                        form="forms"
+                        required
                       />
                     </div>
 
                     <div class="form-group">
-                      <label class="fs-no-bold" for="product_description"
+                      <label class="fs-no-bold" for="product-amount"
                         >Valor Unitário</label
                       >
                       <input
                         class="form-control"
                         type="number"
-                        name="product_description"
-                        id="product_description"
+                        name="product-amount"
+                        id="product-amount"
+                        form="forms"
+                        required
                       />
                     </div>
 
                     <div class="form-group">
-                      <label class="fs-no-bold" for="product_description"
+                      <label class="fs-no-bold" for="product-total_amount"
                         >Valor Total</label
                       >
                       <input
                         class="form-control"
-                        type="number"
                         disabled
-                        name="product_description"
-                        id="product_description"
+                        name="product-total_amount"
+                        id="product-total_amount"
+                        form="forms"
+                        required
                       />
                     </div>
                   </div>
-                </form>
-              </fieldset>
-            </li>
-
-            <li class="product fs-display-flex">
-              <button>Delete</button>
-              <fieldset>
-                <legend class="fs-color-white">Item 2</legend>
-                <form class="fs-display-flex flex-direction-column">
-                  <div class="form-group">
-                    <label class="fs-no-bold" for="product_description"
-                      >Descrição do Produto</label
-                    >
-                    <input
-                      class="form-control"
-                      name="product_description"
-                      id="product_description"
-                    />
-                  </div>
-
-                  <div class="group">
-                    <div class="form-group">
-                      <label class="fs-no-bold" for="product_description"
-                        >Und. Medida</label
-                      >
-                      <input
-                        class="form-control"
-                        name="product_description"
-                        id="product_description"
-                      />
-                    </div>
-
-                    <div class="form-group">
-                      <label class="fs-no-bold" for="product_description"
-                        >Qtde em Estoque</label
-                      >
-                      <input
-                        class="form-control"
-                        type="number"
-                        name="product_description"
-                        id="product_description"
-                      />
-                    </div>
-
-                    <div class="form-group">
-                      <label class="fs-no-bold" for="product_description"
-                        >Valor Unitário</label
-                      >
-                      <input
-                        class="form-control"
-                        type="number"
-                        name="product_description"
-                        id="product_description"
-                      />
-                    </div>
-
-                    <div class="form-group">
-                      <label class="fs-no-bold" for="product_description"
-                        >Valor Total</label
-                      >
-                      <input
-                        class="form-control"
-                        type="number"
-                        disabled
-                        name="product_description"
-                        id="product_description"
-                      />
-                    </div>
-                  </div>
-                </form>
+                </section>
               </fieldset>
             </li>
           </ul>
         </fieldset>
+
+        <fieldset
+          class="session fs-md-margin fs-display-flex session-attachment"
+        >
+          <legend class="fs-color-white">Anexos</legend>
+
+          <button class="" onclick="addIAttachmentToList()">Anexar</button>
+
+          <input type="file" name="inputFile" id="inputFile" multiple />
+
+          <fieldset>
+            <legend class="fs-color-white">Documentos</legend>
+
+            <ul class="attachments" id="attachments">
+              <!-- <li class="attachment fs-display-flex" id="attachment-1">
+                <button onclick="removeAttachment(1)">Delete</button>
+                <button onclick="viewAttachment(1)">Visualizar</button>
+                <p>Documento</p>
+              </li> -->
+            </ul>
+          </fieldset>
+        </fieldset>
       </fieldset>
     </main>
+
+    <script src="./scripts/validation.js"></script>
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/products.js"></script>
+    <script src="./scripts/attachments.js"></script>
   </body>
 </html>
