@@ -19,18 +19,3 @@ function getAddressByZipCode() {
 }
 
 $("#address-zip_code").blur(getAddressByZipCode);
-
-function calculateTotalAmount() {
-  var amount = $("#product-amount").val();
-  var quantity = $("#product-quantity").val();
-
-  var priceFormatted = Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  }).format(amount * quantity);
-
-  $("#product-total_amount").val(priceFormatted);
-}
-
-$("#product-amount").change(calculateTotalAmount);
-$("#product-quantity").change(calculateTotalAmount);

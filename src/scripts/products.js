@@ -23,14 +23,16 @@ function createItem(id, number) {
     <fieldset>
       <legend class="fs-color-white">Item ${number}</legend>
       <section class="fs-display-flex flex-direction-column">
+        <input type="hidden" name="position" value="${number}" />
+
         <div class="form-group">
-          <label class="fs-no-bold" for="product-description"
+          <label class="fs-no-bold" for="${number}-product-description"
             >Descrição do Produto</label
           >
           <input
             class="form-control"
-            name="product-description"
-            id="product-description"
+            name="${number}-product-description"
+            id="${number}-product-description"
             form="forms"
             required
           />
@@ -38,19 +40,19 @@ function createItem(id, number) {
 
         <div class="group">
           <div class="form-group">
-            <label class="fs-no-bold" for="product-measurement"
+            <label class="fs-no-bold" for="${number}-product-measurement"
               >Und. Medida</label
             >
             <input
               class="form-control"
-              name="product-measurement"
-              id="product-measurement"
-              list="product-measurement-list"
+              name="${number}-product-measurement"
+              id="${number}-product-measurement"
+              list="${number}-product-measurement-list"
               form="forms"
               required
             />
 
-            <datalist id="product-measurement-list">
+            <datalist id="${number}-product-measurement-list">
               <option value="Quilograma"></option>
               <option value="Grama"></option>
               <option value="Litros"></option>
@@ -61,42 +63,44 @@ function createItem(id, number) {
           </div>
 
           <div class="form-group">
-            <label class="fs-no-bold" for="product-quantity"
+            <label class="fs-no-bold" for="${number}-product-quantity"
               >Qtde em Estoque</label
             >
             <input
               class="form-control"
               type="number"
-              name="product-quantity"
-              id="product-quantity"
+              name="${number}-product-quantity"
+              id="${number}-product-quantity"
               form="forms"
               required
+              onchange="calculateTotalAmount(${number})"
             />
           </div>
 
           <div class="form-group">
-            <label class="fs-no-bold" for="product-amount"
+            <label class="fs-no-bold" for="${number}-product-amount"
               >Valor Unitário</label
             >
             <input
               class="form-control"
               type="number"
-              name="product-amount"
-              id="product-amount"
+              name="${number}-product-amount"
+              id="${number}-product-amount"
               form="forms"
               required
+              onchange="calculateTotalAmount(${number})"
             />
           </div>
 
           <div class="form-group">
-            <label class="fs-no-bold" for="product-total_amount"
+            <label class="fs-no-bold" for="${number}-product-total_amount"
               >Valor Total</label
             >
             <input
               class="form-control"
               disabled
-              name="product-total_amount"
-              id="product-total_amount"
+              name="${number}-product-total_amount"
+              id="${number}-product-total_amount"
               form="forms"
               required
             />
@@ -116,4 +120,16 @@ function removeItem(id) {
   if (lengthItensListed > 1) {
     $(`#item-${id}`).remove();
   }
+}
+
+function calculateTotalAmount(id) {
+  var amount = $(`#${id}-product-amount`).val();
+  var quantity = $(`#${id}-product-quantity`).val();
+
+  var priceFormatted = Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  }).format(amount * quantity);
+
+  $(`#${id}-product-total_amount`).val(priceFormatted);
 }

@@ -14,7 +14,6 @@
 
     <link rel="stylesheet" href="./styles/main.css" />
 
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <title>Igne | Cadastro de cliente e produto</title>
@@ -229,18 +228,22 @@
 
           <ul class="products fs-display-flex" id="products">
             <li class="product fs-display-flex" id="item-1">
-              <button onclick="removeItem(1)">Delete</button>
+              <button onclick="removeItem(1)">
+                <i class="flaticon flaticon-trash icon-xl"></i>
+              </button>
               <fieldset>
                 <legend class="fs-color-white">Item 1</legend>
                 <section class="fs-display-flex flex-direction-column">
+                  <input type="hidden" name="position" value="1" />
+
                   <div class="form-group">
-                    <label class="fs-no-bold" for="product-description"
+                    <label class="fs-no-bold" for="1-product-description"
                       >Descrição do Produto</label
                     >
                     <input
                       class="form-control"
-                      name="product-description"
-                      id="product-description"
+                      name="1-product-description"
+                      id="1-product-description"
                       form="forms"
                       required
                     />
@@ -248,19 +251,19 @@
 
                   <div class="group">
                     <div class="form-group">
-                      <label class="fs-no-bold" for="product-measurement"
+                      <label class="fs-no-bold" for="1-product-measurement"
                         >Und. Medida</label
                       >
                       <input
                         class="form-control"
-                        name="product-measurement"
-                        id="product-measurement"
-                        list="product-measurement-list"
+                        name="1-product-measurement"
+                        id="1-product-measurement"
+                        list="1-product-measurement-list"
                         form="forms"
                         required
                       />
 
-                      <datalist id="product-measurement-list">
+                      <datalist id="1-product-measurement-list">
                         <option value="Quilograma"></option>
                         <option value="Grama"></option>
                         <option value="Litros"></option>
@@ -271,42 +274,44 @@
                     </div>
 
                     <div class="form-group">
-                      <label class="fs-no-bold" for="product-quantity"
+                      <label class="fs-no-bold" for="1-product-quantity"
                         >Qtde em Estoque</label
                       >
                       <input
                         class="form-control"
                         type="number"
-                        name="product-quantity"
-                        id="product-quantity"
+                        name="1-product-quantity"
+                        id="1-product-quantity"
                         form="forms"
                         required
+                        onchange="calculateTotalAmount(1)"
                       />
                     </div>
 
                     <div class="form-group">
-                      <label class="fs-no-bold" for="product-amount"
+                      <label class="fs-no-bold" for="1-product-amount"
                         >Valor Unitário</label
                       >
                       <input
                         class="form-control"
                         type="number"
-                        name="product-amount"
-                        id="product-amount"
+                        name="1-product-amount"
+                        id="1-product-amount"
                         form="forms"
                         required
+                        onchange="calculateTotalAmount(1)"
                       />
                     </div>
 
                     <div class="form-group">
-                      <label class="fs-no-bold" for="product-total_amount"
+                      <label class="fs-no-bold" for="1-product-total_amount"
                         >Valor Total</label
                       >
                       <input
                         class="form-control"
                         disabled
-                        name="product-total_amount"
-                        id="product-total_amount"
+                        name="1-product-total_amount"
+                        id="1-product-total_amount"
                         form="forms"
                         required
                       />
@@ -325,25 +330,33 @@
 
           <button class="" onclick="addIAttachmentToList()">Anexar</button>
 
-          <input type="file" name="inputFile" id="inputFile" multiple />
+          <input
+            type="file"
+            name="inputFile"
+            id="inputFile"
+            multiple
+            required
+          />
 
           <fieldset>
             <legend class="fs-color-white">Documentos</legend>
 
             <ul class="attachments" id="attachments">
-              <!-- <li class="attachment fs-display-flex" id="attachment-1">
-                <button onclick="removeAttachment(1)">Delete</button>
+              <li class="attachment fs-display-flex" id="attachment-1">
+                <button onclick="removeAttachment(1)">
+                  <i class="flaticon flaticon-trash icon-xl"></i>
+                </button>
                 <button onclick="viewAttachment(1)">Visualizar</button>
                 <p>Documento</p>
-              </li> -->
+              </li>
             </ul>
           </fieldset>
         </fieldset>
       </fieldset>
     </main>
 
-    <script src="./scripts/validation.js"></script>
-    <script src="./scripts/app.js"></script>
+    <script src="./scripts/submitForm.js"></script>
+    <script src="./scripts/getAddress.js"></script>
     <script src="./scripts/products.js"></script>
     <script src="./scripts/attachments.js"></script>
   </body>
