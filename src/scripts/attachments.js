@@ -22,7 +22,9 @@ $("#inputFile").change(async function () {
 function createAttachment(name, index) {
   return `
   <li class="attachment fs-display-flex" id="attachment-${index}">
-    <button onclick="removeAttachment(${index})">Delete</button>
+    <button onclick="removeAttachment(${index})">
+      <i class="flaticon flaticon-trash icon-xl"></i>
+    </button>
     <button onclick="viewAttachment(${index})">Visualizar</button>
     <p>${name}</p>
   </li>
